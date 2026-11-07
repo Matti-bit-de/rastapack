@@ -1,0 +1,80 @@
+{
+  "_note": "Single source of truth for company data. Only confirmed values go here; empty values are omitted from the page and from Schema.",
+  "name": "رستا پک",
+  "nameEn": "Rasta Pack",
+  "legalDescriptor": "طراحی کارتن و بسته‌بندی",
+  "url": "https://rastapack.ir",
+  "locale": "fa_IR",
+  "tagline": "",
+  "foundedJalali": 1399,
+  "phone": {
+    "display": "۰۲۶ ۳۴۴۶ ۴۰۴۶",
+    "tel": "+982634464046"
+  },
+  "mobile": {
+    "display": "۰۹۱۰ ۹۵۲ ۶۴۳۸",
+    "tel": "+989109526438",
+    "whatsapp": "989109526438"
+  },
+  "email": "",
+  "address": {
+    "country": "IR",
+    "region": "البرز",
+    "locality": "کرج",
+    "street": "گوهردشت، خیابان کاوه",
+    "display": "البرز، کرج، گوهردشت، خیابان کاوه"
+  },
+  "hours": {
+    "display": "ساعت کاری ۸ صبح تا ۵ بعدازظهر",
+    "short": "۸ صبح تا ۵ بعدازظهر"
+  },
+  "social": {
+    "instagram": "",
+    "telegram": "",
+    "eitaa": "",
+    "rubika": "",
+    "linkedin": ""
+  },
+  "trustSeal": "",
+  "brand": {
+    "navy": "#0b3a78",
+    "orange": "#fe8501"
+  },
+  "analytics": {
+    "ga4": "",
+    "searchConsoleVerification": "",
+    "bingVerification": ""
+  },
+  "nav": [
+    {
+      "label": "خدمات",
+      "url": "/services/"
+    },
+    {
+      "label": "صنایع",
+      "url": "/industries/"
+    },
+    {
+      "label": "نمونه‌کارها",
+      "url": "/portfolio/"
+    },
+    {
+      "label": "مجله",
+      "url": "/blog/"
+    },
+    {
+      "label": "درباره ما",
+      "url": "/about/"
+    },
+    {
+      "label": "تماس با ما",
+      "url": "/contact/"
+    }
+  ],
+  "sections": {
+    "services": "خدمات",
+    "industries": "صنایع",
+    "portfolio": "نمونه‌کارها",
+    "blog": "مجله"
+  }
+}

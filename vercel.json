@@ -1,0 +1,13 @@
+{
+  "framework": null,
+  "installCommand": "npm install",
+  "buildCommand": "npm run build:temp",
+  "outputDirectory": "dist-temp",
+  "trailingSlash": true,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
+    }
+  ]
+}
