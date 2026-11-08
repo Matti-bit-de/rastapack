@@ -39,6 +39,7 @@ export function organizationSchema(site) {
       addressRegion: site.address?.region,
       addressCountry: site.address?.country,
     },
+    areaServed: site.areaServed ? { '@type': 'Country', name: site.areaServed } : undefined,
     sameAs: socials,
   });
 }
