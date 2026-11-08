@@ -8,7 +8,8 @@
     "build:drafts": "node src/build.js --drafts",
     "build:temp": "node src/build.js --noindex",
     "serve": "node scripts/serve.js",
-    "check": "npm run build && npm test"
+    "check": "npm run build && npm test",
+    "release": "node src/build.js --strict"
   },
   "type": "module",
   "private": true,

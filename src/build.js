@@ -136,12 +136,19 @@ async function main() {
 
   const unreviewed = pages.filter((p) => p.reviewed === false);
   if (unreviewed.length) {
-    warnings.push(`${unreviewed.length} page(s) need subject-matter review before publishing: ${unreviewed.map((p) => p.url).join(', ')}`);
+    const msg = `${unreviewed.length} page(s) need subject-matter review before publishing: ${unreviewed.map((p) => p.url).join(', ')}`;
+    // --strict (npm run release): an unreviewed page blocks the release. Without it this is only a warning.
+    if (process.argv.includes('--strict')) errors.push(`${msg}. Set "reviewed: true" after a specialist approves, or "draft: true" to hold the page back.`);
+    else warnings.push(msg);
   }
 
   console.log(`Built ${pages.length} pages (${indexable.length} in sitemap) in ${Date.now() - t0} ms${preview ? ` [PREVIEW → ${path.basename(dist)}: noindex everywhere${includeDrafts ? ', drafts included' : ''}]` : ''}`);
   for (const w of warnings) console.warn(`  warning: ${w}`);
-  if (errors.length) throw new BuildError(errors);
+  if (errors.length) {
+    // A failed release must not leave a publishable-looking dist/ behind.
+    if (process.argv.includes('--strict')) fs.rmSync(dist, { recursive: true, force: true });
+    throw new BuildError(errors);
+  }
 }
 
 main().catch((e) => {

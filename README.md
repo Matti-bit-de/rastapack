@@ -7,6 +7,7 @@
 ```
 npm install
 npm run build        # نسخه‌ی نهایی در dist/  (با Sitemap و بدون noindex)
+npm run release      # مثل build، ولی اگر صفحه‌ای reviewed: false باشد خطا می‌دهد. فقط با آن منتشر کنید
 npm run build:temp   # نسخه‌ی موقت در dist-temp/  (همه‌ی صفحات noindex)
 npm test             # ۱۰ تست خودکار روی dist/
 npm run serve        # پیش‌نمایش محلی dist/ روی http://localhost:4173
