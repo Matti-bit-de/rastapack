@@ -14,7 +14,7 @@ export function header(ctx, page) {
     .join('');
   return `<header class="site-header">
   <div class="wrap site-header__row">
-    <a class="brand" href="/" aria-label="${esc(site.name)}، صفحه‌ی اصلی">
+    <a class="brand" href="/">
       ${mark}
       <span class="brand__text"><strong>${esc(site.name)}</strong><span>${esc(site.legalDescriptor)}</span></span>
     </a>
