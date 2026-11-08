@@ -25,11 +25,11 @@ function related(ctx, page) {
   return `<section class="related" aria-labelledby="related-title"><div class="wrap wrap--narrow"><h2 id="related-title">مطالب مرتبط</h2><ul class="related__list">${items}</ul></div></section>`;
 }
 
-function listRows(items, { withNumbers = false } = {}) {
+function listRows(items, { level = 3 } = {}) {
   return `<ul class="rows">${items
     .map(
       (p) => `<li class="row">
-      <h3 class="row__title"><a href="${esc(p.url)}">${esc(p.data.title)}</a></h3>
+      <h${level} class="row__title"><a href="${esc(p.url)}">${esc(p.data.title)}</a></h${level}>
       <p class="row__text">${esc(p.data.summary)}</p>
     </li>`,
     )
@@ -159,7 +159,7 @@ function collectionIndex(ctx, page, trail, items) {
 <section class="section section--tight">
   <div class="wrap wrap--narrow">
     ${page.html ? `<div class="prose prose--intro">${page.html}</div>` : ''}
-    ${listRows(items)}
+    ${listRows(items, { level: /<h2[\s>]/.test(page.html || '') ? 3 : 2 })}
   </div>
 </section>
 ${ctaBlock(ctx)}`;
@@ -172,7 +172,7 @@ function blogIndex(ctx, page, trail) {
 <section class="section section--tight"><div class="wrap wrap--narrow">
 <ul class="rows">${posts
     .map(
-      (p) => `<li class="row"><p class="row__meta"><time datetime="${esc(p.data.date)}">${esc(faDate(p.data.date))}</time></p><h3 class="row__title"><a href="${esc(p.url)}">${esc(p.data.title)}</a></h3><p class="row__text">${esc(p.data.description)}</p></li>`,
+      (p) => `<li class="row"><p class="row__meta"><time datetime="${esc(p.data.date)}">${esc(faDate(p.data.date))}</time></p><h2 class="row__title"><a href="${esc(p.url)}">${esc(p.data.title)}</a></h2><p class="row__text">${esc(p.data.description)}</p></li>`,
     )
     .join('')}</ul></div></section>
 ${ctaBlock(ctx)}`;
